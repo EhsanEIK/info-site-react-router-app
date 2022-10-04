@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const User = ({ user }) => {
     const { name, username, id } = user;
     return (
-        <div className='border-2 rounded-lg border-neutral-500 p-5'>
+        <div className='border-2 rounded-lg border-neutral-500 relative md:h-0 h-32 p-5'>
             <h2 className='mb-3'>{name}</h2>
-            <Link to={`/user/${id}`} className='bg-teal-600 text-white rounded-sm px-2 py-1 hover:bg-teal-700'>{username}</Link>
+            <Link to={`/user/${id}`} className='bg-teal-600 text-white rounded-sm md:static absolute bottom-3 px-2 py-1 hover:bg-teal-700'>{username}</Link>
         </div>
     );
 };

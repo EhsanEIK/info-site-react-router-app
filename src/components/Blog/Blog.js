@@ -9,9 +9,9 @@ const Blog = ({ blog }) => {
         navigate(`/blog/${id}`);
     }
     return (
-        <div className='border-2 rounded-lg border-neutral-500 p-5'>
+        <div className='border-2 rounded-lg border-neutral-500 relative h-48 p-5'>
             <h2 className='mb-3'>{title}</h2>
-            <button onClick={handleClick} className='bg-teal-600 text-white rounded-sm px-2 py-1 hover:bg-teal-700'>Get Details</button>
+            <button onClick={handleClick} className='bg-teal-600 text-white rounded-sm absolute bottom-3 px-2 py-1 hover:bg-teal-700'>Get Details</button>
         </div>
     );
 };

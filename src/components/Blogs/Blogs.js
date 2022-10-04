@@ -9,7 +9,7 @@ const Blogs = () => {
         <div>
             <h2 className='text-center text-4xl mb-5'>Here are all Blogs</h2>
             <hr />
-            <div className='grid grid-cols-3 gap-4 mt-10'>
+            <div className='grid md:grid-cols-3 grid-cols-2 gap-4 mt-10'>
                 {
                     blogs.map(blog => <Blog key={blog.id} blog={blog}></Blog>)
                 }

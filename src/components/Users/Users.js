@@ -8,7 +8,7 @@ const Users = () => {
         <div>
             <h2 className='text-center text-4xl mb-3'>Here are all Users</h2>
             <hr />
-            <div className='grid grid-cols-3 gap-4 mt-10'>
+            <div className='grid md:grid-cols-3 grid-cols-2 gap-4 mt-10'>
                 {
                     users.map(user => <User key={user.id} user={user}></User>)
                 }
