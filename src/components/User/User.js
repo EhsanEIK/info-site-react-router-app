@@ -6,6 +6,7 @@ const User = ({ user }) => {
     return (
         <div>
             <h2>{name}</h2>
+            <Link to={`/user/${id}`}>{username}</Link>
         </div>
     );
 };

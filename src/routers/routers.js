@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blogs from "../components/Blogs/Blogs";
 import Home from "../components/Home/Home";
+import UserDetails from "../components/UserDetails/UserDetails";
 import Users from "../components/Users/Users";
 import Main from "../layout/Main";
 
@@ -15,6 +16,13 @@ const router = createBrowserRouter([
                     return fetch('https://jsonplaceholder.typicode.com/users');
                 },
                 element: <Users></Users>
+            },
+            {
+                path: '/user/:id',
+                loader: async ({ params }) => {
+                    return fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`);
+                },
+                element: <UserDetails></UserDetails>
             },
             { path: '/blogs', element: <Blogs></Blogs> },
         ]
