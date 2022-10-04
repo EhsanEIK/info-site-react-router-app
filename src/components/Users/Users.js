@@ -6,10 +6,13 @@ const Users = () => {
     const users = useLoaderData();
     return (
         <div>
-            <h2>Welcome to the users page</h2>
-            {
-                users.map(user => <User key={user.id} user={user}></User>)
-            }
+            <h2 className='text-center text-4xl mb-3'>Here are All Users</h2>
+            <hr />
+            <div className='grid grid-cols-3 gap-4 mt-10'>
+                {
+                    users.map(user => <User key={user.id} user={user}></User>)
+                }
+            </div>
         </div>
     );
 };
