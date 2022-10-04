@@ -9,7 +9,13 @@ const router = createBrowserRouter([
         path: '/', element: <Main></Main>, children: [
             { path: '/', element: <Home></Home> },
             { path: '/home', element: <Home></Home> },
-            { path: '/users', element: <Users></Users> },
+            {
+                path: '/users',
+                loader: async () => {
+                    return fetch('https://jsonplaceholder.typicode.com/users');
+                },
+                element: <Users></Users>
+            },
             { path: '/blogs', element: <Blogs></Blogs> },
         ]
     },
