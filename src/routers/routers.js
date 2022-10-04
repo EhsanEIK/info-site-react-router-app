@@ -38,10 +38,10 @@ const router = createBrowserRouter([
                     return fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
                 },
                 element: <BlogDetails></BlogDetails>
-            }
+            },
+            { path: '*', element: <div>error 404!! Found</div> }
         ]
     },
-    { path: '*', element: <div>error 404!! Found</div> }
 ]);
 
 export default router;
