@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import BlogDetails from "../components/BlogDetails/BlogDetails";
 import Blogs from "../components/Blogs/Blogs";
 import Home from "../components/Home/Home";
 import UserDetails from "../components/UserDetails/UserDetails";
@@ -24,7 +25,20 @@ const router = createBrowserRouter([
                 },
                 element: <UserDetails></UserDetails>
             },
-            { path: '/blogs', element: <Blogs></Blogs> },
+            {
+                path: '/blogs',
+                loader: async () => {
+                    return fetch('https://jsonplaceholder.typicode.com/posts');
+                },
+                element: <Blogs></Blogs>
+            },
+            {
+                path: '/blog/:id',
+                loader: async ({ params }) => {
+                    return fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`);
+                },
+                element: <BlogDetails></BlogDetails>
+            }
         ]
     },
     { path: '*', element: <div>error 404!! Found</div> }
