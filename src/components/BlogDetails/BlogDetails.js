@@ -11,9 +11,11 @@ const BlogDetails = () => {
     }
     return (
         <div>
-            <h2>{title}</h2>
-            <p>{body}</p>
-            <button onClick={handleClick}>Get Author</button>
+            <h2 className='text-center text-4xl mb-5'>Title: <span className='font-semibold text-yellow-600'>{title}</span></h2>
+            <div className='text-center text-lg'>
+                <p>{body}</p>
+                <button onClick={handleClick} className='bg-teal-600 text-white rounded-sm px-2 py-1 mt-5 hover:bg-teal-700'>Get Author</button>
+            </div>
         </div>
     );
 };
