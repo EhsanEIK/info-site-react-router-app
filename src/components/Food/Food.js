@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb, getDataFromDb } from '../../utilities/fakeDb';
+import { addToDb, deleteCartFromDb, getDataFromDb } from '../../utilities/fakeDb';
 import Cart from '../Cart/Cart';
 import Meal from '../Meal/Meal';
 
@@ -45,6 +45,11 @@ const Food = () => {
         setCart(newCart);
     }, [meals]);
 
+    // delete cart from db and cart
+    const deleteCart = () => {
+        deleteCartFromDb();
+        setCart([]);
+    }
     return (
         <div>
             <h2 className='text-center text-4xl mb-3'>Welcome to the Food House!!!</h2>
@@ -60,7 +65,8 @@ const Food = () => {
                     }
                 </div>
                 <div className='cart-container bg-slate-500 p-5'>
-                    <Cart cart={cart}></Cart>
+                    <Cart cart={cart}
+                        handleDeleteCart={deleteCart}></Cart>
                 </div>
             </div>
         </div>

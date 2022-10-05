@@ -22,4 +22,9 @@ const getDataFromDb = () => {
     return foodCart;
 }
 
-export { addToDb, getDataFromDb };
+// delete cart from local storage
+const deleteCartFromDb = () => {
+    localStorage.removeItem('cart');
+}
+
+export { addToDb, getDataFromDb, deleteCartFromDb };
