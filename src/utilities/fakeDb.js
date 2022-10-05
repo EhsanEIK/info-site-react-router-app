@@ -1,6 +1,6 @@
 // set data to local storage
 const addToDb = id => {
-    let foodCart = getFromDb();
+    let foodCart = getDataFromDb();
     let quantity = foodCart[id];
     if (quantity) {
         quantity++;
@@ -13,7 +13,7 @@ const addToDb = id => {
 }
 
 // get data from local storage
-const getFromDb = () => {
+const getDataFromDb = () => {
     let foodCart = {};
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
@@ -22,4 +22,4 @@ const getFromDb = () => {
     return foodCart;
 }
 
-export { addToDb, getFromDb };
+export { addToDb, getDataFromDb };

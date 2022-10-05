@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { addToDb } from '../../utilities/fakeDb';
+import { addToDb, getDataFromDb } from '../../utilities/fakeDb';
 import Cart from '../Cart/Cart';
 import Meal from '../Meal/Meal';
 
@@ -30,6 +30,21 @@ const Food = () => {
         addToDb(selectedMeal.idMeal);
         // console.log(cart)
     }
+
+    // show cart items after 1st loading
+    useEffect(() => {
+        let storedCart = getDataFromDb();
+        let newCart = [];
+        for (const id in storedCart) {
+            const existsMeal = meals.find(meal => meal.idMeal === id);
+            if (existsMeal) {
+                existsMeal.quantity = storedCart[id];
+                newCart = [...newCart, existsMeal];
+            }
+        }
+        setCart(newCart);
+    }, [meals]);
+
     return (
         <div>
             <h2 className='text-center text-4xl mb-3'>Welcome to the Food House!!!</h2>
