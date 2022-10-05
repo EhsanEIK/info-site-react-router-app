@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Meal = ({ meal }) => {
+const Meal = ({ meal, handleAddToCart }) => {
     // console.log(meal);
     const { idMeal, strArea, strMeal, strMealThumb, strInstructions } = meal;
     return (
@@ -12,7 +12,7 @@ const Meal = ({ meal }) => {
                 <p className='text-lg'>{strInstructions.slice(0, 100)}</p>
             </div>
             <div className='mt-28'>
-                <button className='bg-teal-600 text-white rounded-sm w-full absolute bottom-0 px-2 py-4 hover:bg-teal-700'>Add to Cart</button>
+                <button onClick={() => handleAddToCart(meal)} className='bg-teal-600 text-white rounded-sm w-full absolute bottom-0 px-2 py-4 hover:bg-teal-700'>Add to Cart</button>
             </div>
         </div>
     );
