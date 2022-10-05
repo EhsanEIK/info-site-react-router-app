@@ -55,7 +55,7 @@ const Food = () => {
     }
 
     return (
-        <div>
+        <div className='mb-24'>
             <h2 className='text-center text-4xl mb-3'>Welcome to the Food House!!!</h2>
             <hr />
             <div className='meal-container grid md:grid-cols-4 grid-cols-1 gap-4 mt-10'>
@@ -73,7 +73,7 @@ const Food = () => {
                         handleDeleteCart={deleteCart}></Cart>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
