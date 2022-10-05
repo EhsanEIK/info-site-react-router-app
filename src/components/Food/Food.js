@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { addToDb } from '../../utilities/fakeDb';
 import Meal from '../Meal/Meal';
 
 const Food = () => {
-    const [meals, setMeals] = useState([]);
-    const [cart, setCart] = useState([]);
-
     // loaded meals using api and set them on meals
+    const [meals, setMeals] = useState([]);
     useEffect(() => {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=fish`)
             .then(res => res.json())
             .then(data => setMeals(data.meals))
     }, []);
 
+    // add to cart
+    const [cart, setCart] = useState([]);
     const addToCart = (selectedMeal) => {
         let newCart = [];
         const exists = cart.find(meal => meal.idMeal === selectedMeal.idMeal);
@@ -25,7 +26,8 @@ const Food = () => {
             newCart = [...rest, exists];
         }
         setCart(newCart);
-        console.log(cart)
+        addToDb(selectedMeal.idMeal);
+        // console.log(cart)
     }
     return (
         <div>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Meal = ({ meal, handleAddToCart }) => {
     // console.log(meal);
-    const { idMeal, strArea, strMeal, strMealThumb, strInstructions } = meal;
+    const { strArea, strMeal, strMealThumb, strInstructions } = meal;
     return (
         <div className='border-2 rounded-lg border-neutral-500 relative'>
             <div className='mb-3 p-5'>
