@@ -45,7 +45,7 @@ const Food = () => {
                     }
                 </div>
                 <div className='cart-container bg-slate-500 p-5'>
-                    <Cart></Cart>
+                    <Cart cart={cart}></Cart>
                 </div>
             </div>
         </div>
