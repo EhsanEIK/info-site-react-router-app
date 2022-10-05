@@ -59,7 +59,7 @@ const Food = () => {
             <h2 className='text-center text-4xl mb-3'>Welcome to the Food House!!!</h2>
             <hr />
             <div className='meal-container grid md:grid-cols-4 grid-cols-1 gap-4 mt-10'>
-                <div className='meal-container grid col-span-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-10'>
+                <div className='meal-container grid col-span-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-10 md:mb-0 mb-60 '>
                     {
                         meals.map(meal => <Meal
                             key={meal.idMeal}
@@ -68,7 +68,7 @@ const Food = () => {
                         ></Meal>)
                     }
                 </div>
-                <div className='cart-container bg-slate-500 p-5'>
+                <div className='cart-container bg-slate-500 md:static w-full fixed bottom-12 p-5'>
                     <Cart cart={cart}
                         handleDeleteCart={deleteCart}></Cart>
                 </div>

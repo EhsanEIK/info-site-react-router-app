@@ -9,7 +9,7 @@ const Cart = ({ cart, handleDeleteCart }) => {
     }
 
     return (
-        <div className='sticky'>
+        <div className='sticky top-0'>
             <h2 className='text-4xl text-amber-400 font-bold mb-2'>Order Cart</h2>
             <hr />
             <div className='text-white mt-5'>
