@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { addToDb } from '../../utilities/fakeDb';
+import Cart from '../Cart/Cart';
 import Meal from '../Meal/Meal';
 
 const Food = () => {
@@ -33,8 +34,8 @@ const Food = () => {
         <div>
             <h2 className='text-center text-4xl mb-3'>Welcome to the Food House!!!</h2>
             <hr />
-            <div>
-                <div className='meal-container grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-10'>
+            <div className='meal-container grid md:grid-cols-4 grid-cols-1 gap-4 mt-10'>
+                <div className='meal-container grid col-span-3 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 mt-10'>
                     {
                         meals.map(meal => <Meal
                             key={meal.idMeal}
@@ -43,7 +44,9 @@ const Food = () => {
                         ></Meal>)
                     }
                 </div>
-                <div></div>
+                <div className='cart-container bg-slate-500 p-5'>
+                    <Cart></Cart>
+                </div>
             </div>
         </div>
     );
