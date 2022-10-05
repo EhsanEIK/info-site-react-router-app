@@ -9,7 +9,7 @@ const Food = () => {
     // loaded meals using api and set them on meals
     const [meals, setMeals] = useState([]);
     useEffect(() => {
-        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=fish`)
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=`)
             .then(res => res.json())
             .then(data => setMeals(data.meals))
     }, []);
