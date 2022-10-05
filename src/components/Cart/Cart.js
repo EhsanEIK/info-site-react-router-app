@@ -1,4 +1,6 @@
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Cart = ({ cart, handleDeleteCart }) => {
     let totalItems = 0;
@@ -21,6 +23,7 @@ const Cart = ({ cart, handleDeleteCart }) => {
             </div>
             <div>
                 <button onClick={handleDeleteCart} className='bg-rose-600 text-white w-full rounded-lg mt-5 px-2 py-2 hover:bg-rose-700'>confirm order</button>
+                <ToastContainer />
             </div>
         </div>
     );

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { addToDb, deleteCartFromDb, getDataFromDb } from '../../utilities/fakeDb';
 import Cart from '../Cart/Cart';
 import Meal from '../Meal/Meal';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Food = () => {
     // loaded meals using api and set them on meals
@@ -47,6 +49,7 @@ const Food = () => {
 
     // delete cart from db and cart
     const deleteCart = () => {
+        cart.length ? toast.success("Order is on the way!") : toast.error("Please select item first");
         deleteCartFromDb();
         setCart([]);
     }
