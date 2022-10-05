@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import BlogDetails from "../components/BlogDetails/BlogDetails";
 import Blogs from "../components/Blogs/Blogs";
+import Food from "../components/Food/Food";
 import Home from "../components/Home/Home";
 import UserDetails from "../components/UserDetails/UserDetails";
 import Users from "../components/Users/Users";
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
                 },
                 element: <BlogDetails></BlogDetails>
             },
+            { path: '/food', element: <Food></Food> },
             { path: '*', element: <div>error 404!! Found</div> }
         ]
     },
