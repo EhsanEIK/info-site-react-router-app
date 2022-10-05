@@ -17,7 +17,7 @@ const Cart = ({ cart, handleDeleteCart }) => {
                 <ol className='text-lg list-decimal pl-5'>
                     {
                         cart.map(item =>
-                            <li>{item.strMeal} : <span className='bg-red-400 text-base text-blue-700 font-bold border-2 rounded-md px-2'>{item.quantity}</span></li>)
+                            <li key={item.idMeal}>{item.strMeal} : <span className='bg-red-400 text-base text-blue-700 font-bold border-2 rounded-md px-2'>{item.quantity}</span></li>)
                     }
                 </ol>
             </div>

@@ -53,6 +53,7 @@ const Food = () => {
         deleteCartFromDb();
         setCart([]);
     }
+
     return (
         <div>
             <h2 className='text-center text-4xl mb-3'>Welcome to the Food House!!!</h2>
