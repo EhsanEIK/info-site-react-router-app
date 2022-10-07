@@ -5,7 +5,7 @@ const Meal = ({ meal, handleAddToCart }) => {
     // console.log(meal);
     const { strArea, strMeal, strMealThumb, strInstructions } = meal;
     return (
-        <div className='border-2 rounded-lg border-neutral-500 relative md:m-0 m-5 '>
+        <div className='border-2 rounded-lg border-neutral-500 relative md:m-0 m-5'>
             <div className='mb-3 p-5'>
                 <img src={strMealThumb} alt={strMealThumb} />
                 <h2 className='text-2xl font-bold mt-5'>{strMeal}</h2>

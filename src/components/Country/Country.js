@@ -4,7 +4,7 @@ const Country = ({ country }) => {
     console.log(country)
     const { name, capital, area, flags } = country;
     return (
-        <div className='border-2 rounded-lg border-neutral-500 relative'>
+        <div className='border-2 rounded-lg border-neutral-500 relative md:m-0 m-5'>
             <div className='text-lg mb-3 p-5'>
                 <img className='w-full h-48' src={flags.png} alt={`flag-${name?.common}`} />
                 <h2 className='mt-2'><span className='font-bold mr-2'>Country:</span> {name?.common}</h2>
